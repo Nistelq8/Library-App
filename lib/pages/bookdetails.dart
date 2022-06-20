@@ -10,7 +10,16 @@ class BookDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     List<books> Books = books.LibBooks;
     return Scaffold(
-      body: Text(""),
-    );
+        body: Column(
+      children: [
+        Image.asset(
+          'assets/images/book.jpg',
+          height: 200,
+          width: 200,
+        ),
+        Text(books.LibBooks.first.title),
+        Text(books.LibBooks.first.author),
+      ],
+    ));
   }
 }
