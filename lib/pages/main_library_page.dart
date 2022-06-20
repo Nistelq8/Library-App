@@ -5,13 +5,14 @@ import 'package:go_router/go_router.dart';
 import 'package:library_app/models/books_list.dart';
 import 'package:library_app/pages/bookdetails.dart';
 import 'package:library_app/pages/homepage.dart';
+import 'package:library_app/Provider/lib_provider.dart';
 
 class MainLibraryPage extends StatelessWidget {
   MainLibraryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<books> Books = books.LibBooks;
+    List<books> Books = LibProvider.LibBooks;
     return Scaffold(
       backgroundColor: Color.fromRGBO(254, 247, 220, 1),
       appBar: AppBar(
@@ -57,7 +58,12 @@ class MainLibraryPage extends StatelessWidget {
                 height: 100,
                 child: InkWell(
                   onTap: () {
-                    context.push("/bookdetails");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return BookDetails(libBooks: Books[index]);
+                    }));
+
+                    // context.push("/bookdetails");
                   },
                   child: Card(
                     color: Color.fromRGBO(230, 221, 198, 1),
@@ -137,17 +143,17 @@ class MySearchDelegate extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<books> Books = books.LibBooks;
+    List<books> Books = LibProvider.LibBooks;
     // TODO: implement buildSuggestions
     // throw UnimplementedError();
     return ListView.builder(
-      itemCount: books.LibBooks.length,
+      itemCount: LibProvider.LibBooks.length,
       itemBuilder: (context, index) {
         final book = Books[index];
 
         return ListTile(
           leading: Image.asset(book.image),
-          title: Text(books.LibBooks[index].title),
+          title: Text(LibProvider.LibBooks[index].title),
           onTap: () {
             query = book.title;
             showResults(context);
