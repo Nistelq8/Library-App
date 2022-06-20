@@ -2,23 +2,42 @@ class members {
   String firstname;
   String Lastname;
   List<int> BorrowedBooks;
+  String membershipType;
   members(
       {required this.firstname,
       required this.Lastname,
-      required this.BorrowedBooks});
+      required this.BorrowedBooks,
+      required this.membershipType});
+
+  static List<members> LibMembers = [
+    members(
+        firstname: "Aziz",
+        Lastname: "Alsaffar",
+        BorrowedBooks: [3, 9],
+        membershipType: "Gold"),
+    members(
+        firstname: "Hashim",
+        Lastname: "Behbehani",
+        BorrowedBooks: [5],
+        membershipType: "Gold"),
+    members(
+        firstname: "Alhamza",
+        Lastname: "Abdulmonem",
+        BorrowedBooks: [1, 2],
+        membershipType: "Silver"),
+    members(
+        firstname: "Reem",
+        Lastname: "AlHasawi",
+        BorrowedBooks: [],
+        membershipType: "Platinum"),
+    members(
+        firstname: "Laila",
+        Lastname: "AlKandery",
+        BorrowedBooks: [10, 7, 8],
+        membershipType: "Platinum"),
+  ];
 }
 
-List<members> LibMembers = [
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-  members(firstname: "Aziz", Lastname: "Alsaffar", BorrowedBooks: [3, 9]),
-];
-  
 
 //  members = [
 //   {
