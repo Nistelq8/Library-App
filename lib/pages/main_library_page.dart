@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 import 'package:library_app/models/books_list.dart';
+import 'package:library_app/pages/add_book_page.dart';
 import 'package:library_app/pages/bookdetails.dart';
 import 'package:library_app/pages/homepage.dart';
 import 'package:library_app/Provider/lib_provider.dart';
@@ -34,6 +35,9 @@ class MainLibraryPage extends StatelessWidget {
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return AddBook();
+                  }));
                   //  add a page for adding a book
                 },
                 child: Icon(Icons.add_box_rounded),

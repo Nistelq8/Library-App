@@ -18,6 +18,7 @@ class BookDetails extends StatelessWidget {
           title: Center(child: Text("Book Details")),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: [
@@ -26,19 +27,19 @@ class BookDetails extends StatelessWidget {
                   height: 200,
                   width: 200,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      libBooks.title,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        libBooks.title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text(libBooks.author),
-                  ],
+                      Text(libBooks.author),
+                    ],
+                  ),
                 ),
               ],
             ),
